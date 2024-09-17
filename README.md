@@ -4,7 +4,7 @@
 
 ## Description
 
-Votre projet est un générateur de texte qui permet de générer une séquence FASTA d'un transcrit (à partir du nom RefSeq) avec la traductin alignée sur le cadre de lecture. Il utilise plusieurs dépendances pour gérer des fonctionnalités telles que l'accès à des bases de données biologiques comme NCBI et UCSC.
+Ce projet est un générateur de texte qui permet de générer une séquence FASTA d'un transcrit (à partir du nom RefSeq) avec la traductin alignée sur le cadre de lecture. Il utilise plusieurs dépendances pour gérer des fonctionnalités telles que l'accès à des bases de données biologiques comme NCBI et UCSC.
 
 ### Fonctionnalités principales :
 - Requête de données génomiques à partir de **NCBI REST API Datasets v2**
@@ -55,12 +55,12 @@ Lee CM, et al. (2020). Nucleic Acids Res. 48(D1).
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d'informations.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENCE) pour plus d'informations.
 Auteurs
 
-* Romain LEVERGEOIS – Contactez-moi
+* Romain LEVERGEOIS – [Contactez-moi](mailto:romain.levergeois@aphp.fr?subject=Test)
 
-Contributions
+## Contributions
 
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, merci de suivre ces étapes :
 1. Forker le projet
