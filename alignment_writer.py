@@ -149,15 +149,12 @@ for transcript in metadata_prod["reports"][0]["product"]["transcripts"]:
 		## On recupere la sequence fasta avec la REST API UCSC 
 		orientation=genomic_locations["genomic_range"]["orientation"]
 		
-		if (orientation=="minus"):
-			returned=os.popen('samtools faidx /usr/local/bioinf/NCBI/hg38.fa chr{}:{}-{} -i'.format(chr,int(start)-CINQprime,int(end)+TROISprime)).read()
-		else:
-			returned=os.popen('samtools faidx /usr/local/bioinf/NCBI/hg38.fa chr{}:{}-{}'.format(chr,int(start)-CINQprime,int(end)+TROISprime)).read()
+		returned = get_sequence_hg38(orientation, chr, int(start)-CINQprime,int(end)+TROISprime)["dna"]
 
 		## Mettre tous les carateres en minuscule
 		fasta=returned.lower()
-		fasta=''.join(fasta.splitlines()[1:])
-		fasta=fasta.replace("\n","")
+		#fasta=''.join(fasta.splitlines()[1:])
+		#fasta=fasta.replace("\n","")
 
 
 		## Position relative des exons
@@ -243,7 +240,9 @@ for transcript in metadata_prod["reports"][0]["product"]["transcripts"]:
 				x = re.findall(NP, seq)
 				if(x):
 					prot=seq
-			prot=''.join(prot.split('\n')[1:])
+
+			prot=''.join(prot.split('\\n')[1:])
+			prot = prot[0:-1]
 			prot=encrypt(prot,'..',1)+".."+"*"
 			## Convert the string to amino acids table
 			tab_aa=list(prot)
