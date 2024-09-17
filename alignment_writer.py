@@ -148,14 +148,10 @@ for transcript in metadata_prod["reports"][0]["product"]["transcripts"]:
 
 		## On recupere la sequence fasta avec la REST API UCSC 
 		orientation=genomic_locations["genomic_range"]["orientation"]
-		
 		returned = get_sequence_hg38(orientation, chr, int(start)-CINQprime,int(end)+TROISprime)["dna"]
 
 		## Mettre tous les carateres en minuscule
 		fasta=returned.lower()
-		#fasta=''.join(fasta.splitlines()[1:])
-		#fasta=fasta.replace("\n","")
-
 
 		## Position relative des exons
 		tmpExonStarts=[]
